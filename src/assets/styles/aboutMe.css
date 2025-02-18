@@ -1,0 +1,94 @@
+html, body {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #F5E8D9; /* Light beige */
+    color: #5C4033; /* Deep brown */
+    text-align: center;
+}
+
+/* About Me Section */
+.aboutMe {
+    max-width: 800px;
+    background: #FAF3E0; /* Soft beige */
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    border: 2px solid #D2B48C; /* Light brown */
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Heading */
+.aboutMe h1 {
+    font-size: 2.5rem;
+    color: #8B4513; /* Saddle brown */
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+/* Paragraphs */
+.aboutMe p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    color: #5C4033; /* Deep brown */
+}
+
+/* Highlighted Text */
+.highlight {
+    color: #A0522D; /* Brownish-orange */
+    font-weight: bold;
+}
+
+.navBar {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    position: fixed;
+    top: 20px; 
+    right: 65px; 
+    z-index: 1000; 
+    
+  }
+  
+  .navBar button {
+    background-color: #80663800;
+    color: rgb(81, 45, 6);
+    border: none;
+    padding: 8px 15px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .navBar button:hover {
+    background-color: #4d3004;
+    color:white ;
+    transform: translateY(-3px);
+  }
+  
+  .navBar button:active {
+    transform: translateY(2px);
+  }
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .aboutMe {
+        padding: 30px;
+    }
+
+    .aboutMe h1 {
+        font-size: 2rem;
+    }
+
+    .aboutMe p {
+        font-size: 1.1rem;
+    }
+}

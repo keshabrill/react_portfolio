@@ -5,18 +5,12 @@
     box-sizing: border-box;
   }
   
-  body {
-    font-family: 'Arial', sans-serif;
-    background-color: #fefae0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 100vh;
-  }
+ 
   
    /* Names and other txt */
   .hero {
     text-align: left;
+    margin-right: 600px;
     color: #6e3e0e;
     padding: 50px;
     max-width: 800px;
@@ -124,4 +118,4 @@
         }
   
   .profilePhoto img:hover {
-    transform: scale(1.05);
+    transform: scale(1.05);}
