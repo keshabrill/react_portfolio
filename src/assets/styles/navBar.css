@@ -1,68 +1,184 @@
-/* CSS (navBar.css) */
+/* navBar.css - Enhanced with Better Padding & Spacing */
+:root {
+  --primary-color: rgb(81, 45, 6);
+  --hover-color: #4d3004;
+  --active-color: #5a3407;
+  --text-light: #ffffff;
+  --bg-light: rgba(255, 255, 255, 0.98);
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+  --nav-padding: 15px;
+}
+
+/* Main Container - Fixed to top right */
 .nav-container {
-    position: fixed;
-    top: 20px;
-    right: 5%;
-    z-index: 1000;
-  }
-  
+  position: fixed;
+  top: 0%;
+  right: 10%;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  background: transparent;
+  padding: 1px;
+}
+
+/* Burger Menu Button */
+.burger-menu {
+  display: none;
+  background: var(--bg-light);
+  border: none;
+  border-radius: 0%;
+  box-shadow: var(--shadow);
+  color: var(--primary-color);
+  cursor: pointer;
+  padding: 12px 14px;
+  margin-bottom: 5px;
+  transition: var(--transition);
+  z-index: 1001;
+}
+
+.burger-menu:hover {
+  transform: scale(1.05);
+  padding: 13px 15px;
+}
+
+/* Navigation Bar - Desktop */
+.navBar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  padding: 8px 15px;
+  background: var(--bg-light);
+  border-radius: 0px;
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(210, 180, 140, 0.2);
+}
+
+/* Navigation Buttons */
+.navBar button {
+  background-color: transparent;
+  color: var(--primary-color);
+  border: none;
+  padding: 10px 20px;
+  font-size: clamp(15px, 1.1vw, 18px);
+  border-radius: 20px;
+  cursor: pointer;
+  transition: var(--transition);
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-align: center;
+  white-space: nowrap;
+  margin: 2px 0;
+}
+
+.navBar button:hover:not(.active) {
+  background-color: var(--hover-color);
+  color: var(--text-light);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+  padding: 10px 22px;
+}
+
+.navBar button.active {
+  background-color: var(--active-color);
+  color: var(--text-light);
+  font-weight: 600;
+  padding: 10px 22px;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
   .burger-menu {
-    display: none;
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: rgb(81, 45, 6);
+    display: block;
+    padding: 14px 16px;
   }
-  
+
   .navBar {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    flex-direction: column;
+    background: var(--bg-light);
+    padding: 15px 12px;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(144, 95, 35, 0.15);
+    gap: 12px;
+    width: 220px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(210, 180, 140, 0.3);
+    animation: fadeInDown 0.3s ease-out;
+    margin-top: 10px;
+  }
+
+  .navBar.open {
     display: flex;
-    justify-content: center;
-    gap: 20px;
   }
-  
+
   .navBar button {
-    background-color: transparent;
-    color: rgb(81, 45, 6);
-    border: none;
-    padding: 8px 15px;
-    font-size: 1.1vw;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: 100%;
+    font-size: 16px;
+    text-align: left;
+    padding: 12px 16px;
+    border-bottom: 1px solid rgba(81, 45, 6, 0.1);
+    border-radius: 8px;
+    margin: 0;
+  }
+
+  .navBar button:last-child {
+    border-bottom: none;
+  }
+
+  .navBar button.active {
+    transform: translateX(5px);
+    padding: 12px 18px;
+  }
+
+  .navBar button:hover:not(.active) {
+    transform: translateX(5px);
+    background-color: rgba(77, 48, 4, 0.05);
+    color: var(--primary-color);
+    padding: 12px 18px;
+  }
+}
+
+/* Very Small Screens */
+@media (max-width: 480px) {
+  .nav-container {
+    right: 12px;
+    top: 12px;
+  }
+
+  .burger-menu {
+    padding: 12px 14px;
+  }
+
+  .navBar {
+    width: 200px;
+    padding: 12px 10px;
+    gap: 10px;
+  }
+
+  .navBar button {
+    font-size: 15px;
+    padding: 10px 14px;
   }
   
-  .navBar button:hover {
-    background-color: #4d3004;
-    color: white;
-    transform: translateY(-3px);
+  .navBar button.active,
+  .navBar button:hover:not(.active) {
+    padding: 10px 16px;
   }
-  
-  @media (max-width: 768px) {
-    .burger-menu {
-      display: block;
-      position: fixed;
-      top: 20px;
-      right: 20px;
-    }
-  
-    .navBar {
-      display: none;
-      flex-direction: column;
-      position: absolute;
-      top: 50px;
-      right: 20px;
-      background: rgba(255, 255, 255, 0.9);
-      padding: 10px;
-      border-radius: 8px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-  
-    .navBar.open {
-      display: flex;
-    }
-  
-    .navBar button {
-      font-size: 16px;
-    }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
   }
-  
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

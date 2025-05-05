@@ -1,0 +1,437 @@
+/* Stable Container - No Resizing During Toggles */
+.skills-certificates-container {
+    background-color: #f9f6f0;
+    background-image: 
+      url('https://www.transparenttextures.com/patterns/old-map.png'),
+      linear-gradient(to bottom, rgba(255,253,245,0.8), rgba(255,253,245,0.4));
+    border: 12px solid transparent;
+    border-image: url('https://www.transparenttextures.com/patterns/vintage-concrete.png') 30 round;
+    padding: clamp(30px, 4vw, 40px) clamp(40px, 7vw, 80px);
+    max-width: min(100vw, 1000px);
+    margin: clamp(40px, 8vh, 80px) auto;
+    font-family: 'Courier New', Courier, monospace;
+    line-height: 1.7;
+    color: #3a3226;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    text-align: center;
+  }
+  
+  /* Decorative Corner Elements */
+  .skills-certificates-container::before,
+  .skills-certificates-container::after {
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path fill="%23b38a58" d="M100,0 L100,40 C60,40 60,60 40,60 C60,60 60,80 20,80 L0,80 L0,0 Z"/></svg>');
+    background-size: contain;
+    opacity: 0.3;
+  }
+  
+  .skills-certificates-container::before {
+    top: 20px;
+    left: 20px;
+  }
+  
+  .skills-certificates-container::after {
+    bottom: 20px;
+    right: 20px;
+    transform: rotate(180deg);
+  }
+  
+  /* Header Styles */
+  .skills-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #d4c9a8;
+    position: relative;
+  }
+  
+  .skills-header h1 {
+    font-size: 2.8rem;
+    color: #5a3921;
+    letter-spacing: 1px;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
+  }
+  
+  .skills-header h1::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 25%;
+    width: 50%;
+    height: 2px;
+    background: linear-gradient(to right, transparent, #251b0e, transparent);
+  }
+  
+  /* Tab Buttons */
+  .tab-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+  
+  .tab-btn {
+    padding: 0.8rem 2.5rem;
+    background: linear-gradient(to bottom, #e8e0d5, #d4c9a8);
+    border: 1px solid #b38a58;
+    border-radius: 30px;
+    font-family: 'Courier New', monospace;
+    font-size: 1.1rem;
+    color: #5a3921;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .tab-btn.active {
+    background: linear-gradient(to bottom, #b38a58, #8b5a2b);
+    color: #f8f5f0;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Tab Content Wrapper */
+  .tab-content-wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+  
+  /* Grid Containers - Absolute Positioned */
+  .skills-grid,
+  .certificates-grid {
+    display: grid;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    padding-top: 1rem;
+    box-sizing: border-box;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+  }
+  
+  .skills-grid[data-active="true"],
+  .certificates-grid[data-active="true"] {
+    opacity: 1;
+    pointer-events: all;
+    position: relative;
+  }
+  
+  /* Skills Grid */
+  .skills-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    align-content: start;
+  }
+  
+  /* Certificates Grid */
+  .certificates-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+    align-content: start;
+  }
+  
+  /* Card Styles */
+  /* Updated Skill Cards - Refreshed Design */
+.skill-card {
+    background: rgba(255, 253, 245, 0.95);
+    padding: 1.8rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    height: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(180, 150, 110, 0.2);
+  }
+  
+  .skill-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+  }
+  
+  /* Skill Header */
+  .skill-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.2rem;
+  }
+  
+  .skill-icon {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #f5e8d5, #e0c9a8);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1rem;
+    color: #8b5a2b;
+    font-size: 1.2rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .skill-header-text {
+    flex: 1;
+  }
+  
+  .skill-header h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #5a3921;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+  
+  .category {
+    
+    padding: 0.3rem 0.8rem;
+    background: rgba(180, 150, 110, 0.15);
+    border-radius: 15px;
+    font-size: 0.75rem;
+    color: #8b5a2b;
+    margin-top: 0.3rem;
+    border: 1px solid rgba(180, 150, 110, 0.3);
+  }
+  
+  /* Progress Indicator - Circular Design */
+  .progress-container {
+    position: relative;
+    width: 100%;
+    height: 120px;
+    margin: 1.5rem auto;
+  }
+  
+  .circular-progress {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+  }
+  
+  .circular-progress svg {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .verify-btn {
+    pointer-events: auto !important;
+    position: relative;
+    z-index: 10;
+    color: #251b0e;
+  }
+  .circular-progress circle {
+    fill: none;
+    stroke-width: 8;
+    stroke-linecap: round;
+    transform: rotate(-90deg);
+    transform-origin: 50% 50%;
+  }
+  
+  .progress-bg {
+    stroke: #e8e0d5;
+  }
+  
+  .progress-bar {
+    stroke: url(#progress-gradient);
+    stroke-dasharray: 283;
+    stroke-dashoffset: calc(283 - (283 * var(--progress)) / 100);
+    transition: stroke-dashoffset 0.8s ease;
+  }
+  
+  .progress-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #5a3921;
+  }
+  
+  .progress-text span {
+    font-size: 0.8rem;
+    display: block;
+    color: #8b5a2b;
+    margin-top: 0.2rem;
+  }
+  
+  /* Add this to your container to enable the gradient */
+  .skills-certificates-container defs {
+    position: absolute;
+  }
+  
+  /* Skill Description */
+  .skill-description {
+    font-size: 0.9rem;
+    color: #5a3921;
+    line-height: 1.6;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px dashed rgba(180, 150, 110, 0.3);
+  }
+  
+  /* Add this to your HTML container (once) */
+  <svg style="display: none;">
+    <defs>
+      <linearGradient id="progress-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#d4a76a" />
+        <stop offset="100%" stop-color="#8b5a2b" />
+      </linearGradient>
+    </defs>
+  </svg>
+  
+  .skill-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.8rem;
+  }
+  
+  .skill-header h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #5a3921;
+    font-family: 'Courier New', monospace;
+  }
+  
+  .category {
+    background: #e8e0d5;
+    padding: 0.3rem 0.4rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    color: #5a3921;
+    border: 1px solid #b38a58;
+    
+  }
+  
+  .progress-container {
+    height: 8px;
+    background: #e8e0d5;
+    border-radius: 4px;
+    margin: 0.8rem 0;
+    overflow: hidden;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, #8b5a2b, #b38a58);
+    border-radius: 4px;
+  }
+  
+  .skill-level {
+    display: block;
+    text-align: right;
+    font-size: 0.9rem;
+    color: #8b5a2b;
+    font-style: italic;
+  }
+  
+ 
+  /* Enhanced Certificate Cards with Hover Effect */
+.certificate-card {
+  background: rgba(255, 253, 245, 0.95);
+  border: 1px solid #d4c9a8;
+  box-shadow: 
+      0 3px 10px rgba(0, 0, 0, 0.1),
+      inset 0 0 0 1px rgba(255,255,255,0.8);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.certificate-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(255,255,255,0.3), rgba(255,255,255,0));
+  z-index: 0;
+}
+
+.certificate-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 
+      0 12px 25px rgba(0, 0, 0, 0.15),
+      inset 0 0 0 1px rgba(255,255,255,0.8);
+}
+
+.certificate-image {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-bottom: 1px solid #d4c9a8;
+  filter: sepia(0.3) contrast(1.1);
+  transition: filter 0.4s ease;
+}
+
+.certificate-card:hover .certificate-image {
+  filter: sepia(0.2) contrast(1.05) brightness(1.05);
+}
+
+/* SVG Gradient Definition */
+.skills-certificates-container defs {
+  position: absolute;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1200px) {
+  .skills-grid {
+      grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .skills-certificates-container {
+      padding: 2rem;
+  }
+  
+  .skills-header h1 {
+      font-size: 2.2rem;
+  }
+  
+  .skills-header h1::before,
+  .skills-header h1::after {
+      width: 60px;
+  }
+  
+  .skills-grid,
+  .certificates-grid {
+      grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .skills-certificates-container {
+      padding: 1.5rem;
+  }
+  
+  .tab-buttons {
+      flex-direction: column;
+  }
+  
+  .tab-btn {
+      width: 100%;
+  }
+  
+  .skill-icon {
+      width: 40px;
+      height: 40px;
+      font-size: 1.2rem;
+  }
+}

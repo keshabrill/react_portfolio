@@ -1,0 +1,277 @@
+/* ExperiencePage.css - Vintage Elegant Style */
+
+/* Base Styles with Paper Texture */
+.experience-container {
+  background-color: #f9f6f0;
+  background-image: 
+    url('https://www.transparenttextures.com/patterns/old-map.png'),
+    linear-gradient(to bottom, rgba(255,253,245,0.8), rgba(255,253,245,0.4));
+  border: 12px solid transparent;
+  border-image: url('https://www.transparenttextures.com/patterns/vintage-concrete.png') 30 round;
+  padding: clamp(30px, 4vw, 40px) clamp(40px, 7vw, 80px);
+  max-width: min(100vw, 1000px);
+  margin: clamp(40px, 8vh, 80px) auto;
+  font-family: 'Courier New', Courier, monospace;
+  line-height: 1.7;
+  color: #3a3226;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  text-align: center;
+}
+
+/* Decorative Corner Elements */
+.experience-container::before,
+.experience-container::after {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path fill="%23b38a58" d="M100,0 L100,40 C60,40 60,60 40,60 C60,60 60,80 20,80 L0,80 L0,0 Z"/></svg>');
+  background-size: contain;
+  opacity: 0.3;
+}
+
+.experience-container::before {
+  top: 10px;
+  left: 10px;
+}
+
+.experience-container::after {
+  bottom: 10px;
+  right: 10px;
+  transform: rotate(180deg);
+}
+
+/* Header Styles */
+.experience-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #d4c9a8;
+  position: relative;
+}
+
+.experience-header h1 {
+  font-size: 2.8rem;
+  color: #5a3921;
+  letter-spacing: 1px;
+  margin-bottom: 2rem;
+  font-weight: 600;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
+  position: relative;
+  display: inline-block;
+}
+
+.experience-header h1::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 25%;
+  width: 50%;
+  height: 2px;
+  background: linear-gradient(to right, transparent, #b38a58, transparent);
+}
+
+/* Logo Presentation - Elegant Badge Style */
+.company-logo-container {
+  position: relative;
+  margin: 2rem auto;
+  width: 140px;
+  height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f9f6f0;
+  border-radius: 50%;
+  box-shadow: 
+    0 0 0 8px #e8e0d5,
+    0 0 0 10px #d4c9a8,
+    0 5px 15px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+}
+
+.company-logo {
+  width: 80px;
+  height: auto;
+  filter: sepia(0.3) contrast(1.1);
+  z-index: 2;
+}
+
+.company-logo-container::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: conic-gradient(
+    from 0deg,
+    #f9f6f0 0%,
+    #e8e0d5 20%,
+    #d4c9a8 40%,
+    #b38a58 60%,
+    #d4c9a8 80%,
+    #f9f6f0 100%
+  );
+  opacity: 0.2;
+}
+
+/* Company Info */
+.company-info {
+  margin-top: 1.5rem;
+}
+
+.company-name {
+  font-size: 1.8rem;
+  color: #5a3921;
+  margin-bottom: 0.8rem;
+  font-weight: 500;
+  font-style: italic;
+  letter-spacing: 0.5px;
+}
+
+.experience-intro p {
+  margin: 0.7rem 0;
+  font-size: 1.1rem;
+}
+
+.experience-intro strong {
+  color: #5a3921;
+  font-weight: 600;
+}
+
+/* Project Sections */
+.project-section {
+  margin-bottom: 3rem;
+  padding: 2rem;
+  background: rgba(255, 253, 245, 0.7);
+  border: 1px solid #e8e0d5;
+  border-radius: 2px;
+  position: relative;
+  overflow: hidden;
+}
+
+.project-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 100%;
+  background: linear-gradient(to bottom, #b38a58, #d4c9a8);
+}
+
+.project-section h2 {
+  font-size: 1.8rem;
+  color: #5a3921;
+  margin-bottom: 1.2rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px dashed #d4c9a8;
+  font-weight: 500;
+}
+
+/* System Title Highlight */
+.project-overview p:first-of-type {
+  font-size: 1.2rem;
+  line-height: 1.8;
+}
+
+.project-overview strong:first-child {
+  color: #8b4513;
+  font-weight: 700;
+  position: relative;
+  display: inline-block;
+}
+
+.project-overview strong:first-child::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(to right, #b38a58, transparent);
+}
+
+/* Repository Link */
+.repo-link {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.repo-link a {
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  background: linear-gradient(to bottom, #5a3921, #3a2811);
+  color: #f8f5f0;
+  text-decoration: none;
+  font-weight: 500;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+  border: 1px solid #2a1c09;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  letter-spacing: 0.5px;
+  position: relative;
+  overflow: hidden;
+}
+
+.repo-link a::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: -30px;
+  width: 40px;
+  height: 60px;
+  background: rgba(255,255,255,0.2);
+  transform: rotate(30deg);
+  transition: all 0.3s;
+}
+
+.repo-link a:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.repo-link a:hover::before {
+  left: 110%;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .experience-container {
+    margin: 20% auto 10%;
+    padding: 2rem 1.5rem;
+  }
+  
+  .experience-header h1 {
+    font-size: 2.2rem;
+  }
+  
+  .company-name {
+    font-size: 1.5rem;
+  }
+  
+  .project-section {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .experience-container {
+    margin: 25% auto 10%;
+    padding: 1.5rem 1rem;
+    border-width: 8px;
+  }
+  
+  .experience-header h1 {
+    font-size: 1.8rem;
+  }
+  
+  .company-logo-container {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .company-logo {
+    width: 70px;
+  }
+}

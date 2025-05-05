@@ -1,0 +1,126 @@
+/* Base Container - Lighter Version */
+.resume-viewer-container {
+    position: fixed;
+    top: 3.7%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    backdrop-filter: blur(4px); /* Reduced blur */
+  }
+  
+  /* Slimmer Modal */
+  .resume-modal {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+  }
+  
+  /* Lightened Content Box */
+  .resume-modal-content {
+    background-color: #fcfaf6; /* Lighter paper color */
+    padding: 2rem;
+    border-radius: 6px; /* Slightly less rounded */
+    width: 90%;
+    max-width: 850px; /* Slightly narrower */
+    max-height: 88vh; /* Slightly shorter */
+    overflow: auto;
+    box-shadow: 
+      0 4px 12px rgba(0, 0, 0, 0.15), /* Softer shadow */
+      inset 0 0 0 1px rgba(255, 255, 255, 0.8); /* Inner glow */
+    border: 1px solid #e0d5c0; /* Lighter border */
+    position: relative;
+  }
+  
+  /* Slimmer Frame */
+  .resume-iframe {
+    width: 100%;
+    height: 72vh;
+    border: 1px solid #e0d5c0; /* Lighter border */
+    margin-bottom: 1.2rem;
+    background-color: white;
+    box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.05); /* Subtle inner shadow */
+  }
+  
+  /* Refined Buttons */
+  .resume-modal-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1.2rem;
+    padding-top: 0.5rem;
+  }
+  
+  .download-btn, .close-btn {
+    padding: 0.7rem 1.8rem;
+    border: none;
+    border-radius: 24px; /* Slightly less rounded */
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease; /* Faster transition */
+    min-width: 160px; /* Narrower buttons */
+  }
+  
+  .download-btn {
+    background: linear-gradient(to bottom, #6b4a31, #4a3921); /* Lighter gradient */
+    color: #f8f5f0;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .download-btn:hover {
+    background: linear-gradient(to bottom, #7c5b42, #5b4a32);
+    transform: translateY(-1px); /* Subtler hover */
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+  }
+  
+  .close-btn {
+    background: linear-gradient(to bottom, #e0d5c0, #d0c5a8); /* Lighter gradient */
+    color: #4a3921; /* Darker text for better contrast */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  }
+  
+  .close-btn:hover {
+    background: linear-gradient(to bottom, #f0e5d0, #e0d5b8);
+    transform: translateY(-1px); /* Subtler hover */
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .resume-modal-content {
+      width: 94%;
+      padding: 1.2rem;
+      max-height: 86vh;
+    }
+    
+    .resume-iframe {
+      height: 65vh;
+      border-width: 0.5px;
+    }
+    
+    .resume-modal-actions {
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+    
+    .download-btn, .close-btn {
+      width: 100%;
+      padding: 0.6rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .resume-modal-content {
+      padding: 1rem;
+      border-radius: 4px;
+    }
+    
+    .resume-iframe {
+      height: 60vh;
+      margin-bottom: 1rem;
+    }
+  }

@@ -1,94 +1,148 @@
-html, body {
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #F5E8D9; /* Light beige */
-    color: #5C4033; /* Deep brown */
-    text-align: center;
-}
-
-/* About Me Section */
+/* Vintage Elegant About Me - Matching Experience Page Style */
 .aboutMe {
-    max-width: 800px;
-    background: #FAF3E0; /* Soft beige */
-    padding: 40px;
-    border-radius: 12px;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
-    border: 2px solid #D2B48C; /* Light brown */
-    animation: fadeIn 1s ease-in-out;
-}
-
-/* Heading */
-.aboutMe h1 {
-    font-size: 2.5rem;
-    color: #8B4513; /* Saddle brown */
-    margin-bottom: 20px;
-    font-weight: 700;
-}
-
-/* Paragraphs */
-.aboutMe p {
-    font-size: 1.2rem;
-    line-height: 1.6;
-    margin-bottom: 15px;
-    color: #5C4033; /* Deep brown */
-}
-
-/* Highlighted Text */
-.highlight {
-    color: #A0522D; /* Brownish-orange */
+    background-color: #f9f6f0;
+    background-image: 
+      url('https://www.transparenttextures.com/patterns/old-map.png'),
+      linear-gradient(to bottom, rgba(255,253,245,0.8), rgba(255,253,245,0.4));
+    border: 12px solid transparent;
+    border-image: url('https://www.transparenttextures.com/patterns/vintage-concrete.png') 30 round;
+    padding: clamp(30px, 4vw, 40px) clamp(40px, 7vw, 80px);
+    max-width: min(90vw, 1000px);
+    margin: clamp(40px, 8vh, 80px) auto;
+    font-family: 'Courier New', Courier, monospace;
+    line-height: 1.7;
+    color: #3a3226;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    text-align: center;
+  }
+  
+  /* Decorative Corner Elements (Matching Experience Page) */
+  .aboutMe::before,
+  .aboutMe::after {
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path fill="%23b38a58" d="M100,0 L100,40 C60,40 60,60 40,60 C60,60 60,80 20,80 L0,80 L0,0 Z"/></svg>');
+    background-size: contain;
+    opacity: 0.3;
+  }
+  
+  .aboutMe::before {
+    top: 10px;
+    left: 10px;
+  }
+  
+  .aboutMe::after {
+    bottom: 10px;
+    right: 10px;
+    transform: rotate(180deg);
+  }
+  
+  /* Header Styles (Enhanced Experience Page Style) */
+  .aboutMe h1 {
+    font-size: clamp(1.8rem, 5vw, 2.8rem);
+    color: #5a3921;
+    letter-spacing: 1px;
+    margin: 0 auto 2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    animation: typewriter 1.5s steps(40) 0.5s 1 normal both;
+  }
+  
+  .aboutMe h1::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 25%;
+    width: 50%;
+    height: 2px;
+    background: linear-gradient(to right, transparent, #b38a58, transparent);
+  }
+  
+  /* Preserved Unique Text Styling */
+  .aboutMe span {
+    font-style: italic;
+    color: #8b0000;
+  }
+  
+  .aboutMe span.highlight {
+    background-color: #fff2cc;
+    padding: 0 3px;
     font-weight: bold;
-}
-
-.navBar {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    position: fixed;
-    top: 20px; 
-    right: 65px; 
-    z-index: 1000; 
-    
+    border-radius: 2px;
+    box-shadow: 1px 1px 0 #d9d9d9;
   }
   
-  .navBar button {
-    background-color: #80663800;
-    color: rgb(81, 45, 6);
-    border: none;
-    padding: 8px 15px;
-    font-size: 16px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+  .aboutMe span.underline {
+    border-bottom: 2px dotted #5c3a21;
+    padding-bottom: 1px;
   }
   
-  .navBar button:hover {
-    background-color: #4d3004;
-    color:white ;
-    transform: translateY(-3px);
+  .aboutMe span.keyword {
+    font-family: 'Courier New', monospace;
+    background: #f5f5f0;
+    padding: 0 4px;
+    border: 1px solid #d9d9d9;
+    border-radius: 3px;
   }
   
-  .navBar button:active {
-    transform: translateY(2px);
+  /* Content Styles */
+  .aboutMe p {
+    font-size: clamp(0.95rem, 2vw, 1.1rem);
+    margin: 0 auto 1.5rem;
+    max-width: 90%;
+    line-height: 1.6;
+    text-align: left;
   }
-
-
-/* Responsive Design */
-@media (max-width: 768px) {
+  
+  /* Stamp (Matching Experience Page Aesthetic) */
+  .stamp {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 0.7rem;
+    font-weight: bold;
+    color: #8b0000;
+    border: 2px solid #8b0000;
+    padding: 3px 6px;
+    transform: rotate(5deg);
+    background: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+  
+  
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
     .aboutMe {
-        padding: 30px;
+      padding: 2rem;
+      max-width: 95vw;
+      margin: 15% auto;
     }
-
+    
     .aboutMe h1 {
-        font-size: 2rem;
+      white-space: normal;
+      animation: none;
     }
-
+    
     .aboutMe p {
-        font-size: 1.1rem;
+      max-width: 100%;
     }
-}
+  }
+  
+  @media (max-width: 480px) {
+    .aboutMe {
+      padding: 1.5rem;
+      border-width: 8px;
+      margin: 20% auto;
+    }
+    
+    .aboutMe h1 {
+      font-size: 1.8rem;
+    }
+  }
